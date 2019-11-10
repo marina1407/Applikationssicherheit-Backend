@@ -1,0 +1,11 @@
+ch/common/model/dto/FachDto.class
+ch/common/model/po/NotePo.class
+ch/common/model/dto/SemesterDto.class
+ch/common/model/po/SemesterPo.class
+ch/common/model/po/FachPo.class
+ch/common/util/PoDtoMapper.class
+ch/common/persistence/dao/DataAccessObject.class
+ch/common/business/BenutzerDAO.class
+ch/common/model/dto/NoteDto.class
+ch/common/model/po/BenutzerPo.class
+ch/common/model/dto/BenutzerDto.class

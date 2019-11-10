@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="Notenverwaltung"
+		transaction-type="JTA">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>ch.common.model.po.BenutzerPo</class>
+		<class>ch.common.model.po.SemesterPo</class>
+		<class>ch.common.model.po.FachPo</class>
+		<class>ch.common.model.po.NotePo</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/jpatestdb" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="root" />
+			<property name="hibernate.id.new_generator_mappings"
+				value="true" />
+			<property name="showSql" value="true"/>
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.show_sql" value="true" />
+
+			<property name="hibernate.transaction.jta.platform"
+					  value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>
+			<!--<property name="hibernate.transaction.jta.platform"
+				value="org.hibernate.service.jta.platform.internal.WeblogicJtaPlatform" />
+			<property name="hibernate.transaction.factory_class"
+				value="org.hibernate.engine.transaction.internal.jta.CMTTransactionFactory" />-->
+		</properties>
+	</persistence-unit>
+</persistence>
+

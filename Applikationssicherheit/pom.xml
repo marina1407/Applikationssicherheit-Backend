@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<groupId>ch.bzz.applikationssicherheit</groupId>
+	<artifactId>Applikationssicherheit</artifactId>
+	<modelVersion>4.0.0</modelVersion>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
+	<name>Applikationssicherheit implementieren</name>
+
+	<!-- ............................................... -->
+	<!-- configuration -->
+	<!-- ............................................... -->
+	<properties>
+		<dependency.hibernate.version>5.4.8.Final</dependency.hibernate.version>
+		<dependency.mysql.version>8.0.18</dependency.mysql.version>
+		<dependency.javaee7-api.version>7.0</dependency.javaee7-api.version>
+		<dependency.jersey-bundle.version>2.21.1</dependency.jersey-bundle.version>
+		<dependency.maven.jdk.version>1.8</dependency.maven.jdk.version>
+	</properties>
+
+	<!-- Build plugin to force Maven JDK 1.8 compliance -->
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ............................................... -->
+	<!-- dependencies -->
+	<!-- ............................................... -->
+	<dependencies>
+
+		<!-- Database -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${dependency.hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${dependency.hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${dependency.mysql.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<!-- provided -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${dependency.javaee7-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.10</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Benötigt von RestApplication -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${dependency.jersey-bundle.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+</project>
