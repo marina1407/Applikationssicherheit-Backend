@@ -12,7 +12,7 @@
 	<!-- configuration -->
 	<!-- ............................................... -->
 	<properties>
-		<dependency.hibernate.version>5.4.8.Final</dependency.hibernate.version>
+		<dependency.hibernate.version>5.4.24.Final</dependency.hibernate.version>
 		<dependency.mysql.version>8.0.18</dependency.mysql.version>
 		<dependency.javaee7-api.version>7.0</dependency.javaee7-api.version>
 		<dependency.jersey-bundle.version>2.21.1</dependency.jersey-bundle.version>
